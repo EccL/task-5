@@ -8,28 +8,35 @@
         <script>
         /*ax2+bx+c=0; x1,2=(-b)+-(Math.sqrt(b*b-4*a*c))/2a*/
             var a=prompt("Enter value for A"+" (A<0 or A>0)");
-            var b=prompt("Enter value for B");
-            var c=prompt("Enter value for C");
-            var numerator=Math.sqrt(b*b-4*a*c);
-            if(isNaN(numerator)) {
-                alert("Quadratic equation has no solution"); /*num<0;a=2 b=4 c=7*/
+            if(a!=true){
+                alert("Why you canceled?");
             }
-            else if(numerator>0) {
-                var denominator=2*a;
-                var firstRoot=(-b+numerator)/denominator;
-                var secondRoot=(-b-numerator)/denominator;
-                document.write("<p>"+"Roots are differnt"+"</p>")
-                console.log("first root=" +firstRoot);
-                console.log("second root="+secondRoot); /*num>0;a=1 b=-26 c=120*/
+            else if(a==0){
+                alert("Wrong value of A. Try again (F5).");
             }
-            else if(numerator==0){
-                var denominator=2*a;
-                var firstRoot=(-b+numerator)/denominator;
-                var secondRoot=(-b-numerator)/denominator;
-                document.write("<p>"+"Roots are the same"+"</p>")
-                console.log("both roots="+firstRoot); /*num=0;a=1 b=6 c=9*/
+            else{
+                var b=prompt("Enter value for B");
+                var c=prompt("Enter value for C");
+                var numerator=Math.sqrt(b*b-4*a*c);
+                if(isNaN(numerator)) {
+                     alert("Quadratic equation has no solution"); /*num<0;a=2 b=4 c=7*/
+                }
+                else if(numerator>0) {
+                    var denominator=2*a;
+                    var firstRoot=(-b+numerator)/denominator;
+                    var secondRoot=(-b-numerator)/denominator;
+                    document.write("<p>"+"Roots are different"+"</p>")
+                    console.log("first root=" +firstRoot);
+                    console.log("second root="+secondRoot); /*num>0;a=1 b=-26 c=120*/
+                }
+                else if(numerator==0){
+                    var denominator=2*a;
+                    var firstRoot=(-b+numerator)/denominator;
+                    var secondRoot=(-b-numerator)/denominator;
+                    document.write("<p>"+"Roots are the same"+"</p>")
+                    console.log("both roots="+firstRoot); /*num=0;a=1 b=6 c=9*/
+                }
             }
-            else alert("some error");
         </script>
     </body>
 </html>
